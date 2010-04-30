@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" /> 
+	<title>CSS Only Buttons</title>
+	<meta name="author" content="David Hund - Valued Standards" />
+
+	<style>
+	<!--
+	section, article, nav, header, footer { display: block !important;}
+	.examples { margin: 20px; padding: 20px; }
+	.examples div {  padding: 30px; text-align: center; border: 1px solid #999; }
+	.examples div.dark {  background: #333; color: #FFF; border: none; }
+	.examples div.grey {  background: #EEE; }
+	-->
+	</style>
+	<link rel="stylesheet" href="buttons.css" media="screen, projection" />
+</head>
+<body>
+	<h1>CSS Buttons</h1>
+	<p>Some (heavily commented) examples of reusable CSS buttons.</p>
+	<ul>
+		<li><a href="#buttons">Buttons</a>
+			<ul>
+				<li>Beautiful in Safari, Fx 3.6+</li>
+				<li>'OK' in &lt; Fx 3.6, Opera &gt; 10.5 (no gradients)</li>
+				<li>Fine (no round borders, shadow, gradient) in IE 8, Opera &lt; 10.1</li>
+				<li>Some Unicode Symbols are not supported in IE 8</li>
+				<li>IE6 and IE7 show the buttons fine as above but do <em>not support generated content</em>, so for the icons use images...</li>
+			</ul>
+		</li>
+	</ul>
+	<div class="examples" id="buttons">
+		<h2>Buttons</h2>
+		<div>
+			<a class="button" href="#">A simple hyperlink &lt;A&gt; button</a>
+			<button>A &lt;button&gt;</button>
+			<input class="button" type="button" value="A simple &lt;input&gt; button" />
+			<input class="button" type="submit" value="An &lt;input&gt; submit button" />
+			<input class="button" type="reset" value="An &lt;input&gt; reset button" />
+		</div>
+		<div class="dark">
+			<a class="button" href="#">A simple hyperlink &lt;A&gt; button</a>
+			<button>A &lt;button&gt;</button>
+			<input class="button green" type="button" value="&lt;input&gt; button .green" />
+			<input class="button orange" type="submit" value="&lt;input&gt; submit .orange" />
+			<input class="button blue" type="reset" value="&lt;input&gt; reset .blue" />
+		</div>
+		<div class="grey">
+			<a class="button" href="#">A simple hyperlink button</a>
+			<input class="button green" type="button" value="A simple button button" />
+			<input class="button orange" type="submit" value="A simple submit button" />
+			<input class="button blue" type="reset" value="A simple reset button" />
+		</div>
+		<div>
+			<a class="button fun" href="#">A hyperlink with Generated Content</a>
+			<a class="button fun fun2" href="#">This is fun!</a>
+			<a class="button fun fun3" href="#">Handy</a>
+		</div>
+		<div style="background: #FFFFCC">
+			<a class="button inset" href="#">'Inset': Fx/Chrome/Opera 10.5+</a>
+			<a class="button square" href="#">A square button</a>
+			<a class="button rounded" href="#">A rounded button</a>
+			<a class="button bullet" href="#">A bullet button</a>
+			<a class="button small" href="#">A small button</a>
+			<a class="button large" href="#">A large button</a>
+			
+			<p>
+				<a class="button round eject" href="#"><span>Eject</span></a>
+				<a class="button round ok" href="#"><span>OK</span></a>
+				<a class="button round delete" href="#"><span>Delete</span></a>
+				<a class="button round go-left" href="#"><span>Left</span></a>
+				<a class="button round go-right" href="#"><span>Right</span></a>
+				&nbsp;
+				Look ma!, No extra span! -&gt; <a href="#" class="button round2">Checkerdiecheck!</a>
+			</p>
+			<p>
+				<!-- NOTE: whitespace between links is important here! -->
+				<a class="button combined first" href="#">A simple</a><a class="button combined" href="#">combined</a><a class="button combined" href="#">button</a><a class="button combined last" href="#">bar</a>
+			</p>
+			<p>
+				<!-- Note .green classname and NO .first or .last -->
+				<a class="button green combined" href="#">A simple</a><a class="button green combined active" href="#">combined</a><a class="button green combined" href="#">button</a><a class="button green combined" href="#">bar</a>
+			</p>
+			<p>
+				<!-- Note .orange classname and .square -->
+				<a class="button orange combined square active" href="#">A square</a><a class="button orange combined square" href="#">combined</a><a class="button orange combined square" href="#">button</a><a class="button orange combined square" href="#">bar</a>
+			</p>
+
+			<p>
+				<!-- Note .small .square classname and NO .first or .last -->
+				<a class="button small combined square" href="#">A simple</a><a class="button small combined square" href="#">combined</a><a class="button small combined square" href="#">button</a><a class="button small combined square" href="#">bar</a>
+			</p>
+			<p>
+				<!-- Note .small classname and NO .first or .last -->
+				<a class="button small combined" href="#">A simple</a><a class="button small combined" href="#">combined</a><a class="button small combined" href="#">button</a><a class="button small combined" href="#">bar</a>
+			</p>
+
+			<p>The button bar below is identical, but in an unordered list: better accessibility and better semantically, but be careful with whitespace because of the inline-block!</p>
+			<!-- BETTER ACCESSIBILITY and SEMANTICS. BUT: because of inline-block, there must be NO WHITESPACE! -->
+			<ul class="button-bar"><li><a href="#">A simple</a></li><li><a href="#">button</a></li><li><a href="#">bar</a></li><li><a href="#">in a &lt;UL&gt;</a></li></ul>
+
+		</div>
+
+		<p>
+			Lorem Ipsum is simply dummy text of the printing and typesetting industry. simply dummy text of the printing and <a class="button orange" href="#">A simple hyperlink button</a> typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+			 <a class="button small" href="#">A simple hyperlink button</a> since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+		</p>
+	</div>
+
+</body>
+</html>

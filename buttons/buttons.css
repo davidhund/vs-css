@@ -1,0 +1,212 @@
+/*	=================================== BUTTONS ===============================
+	AUTHOR: 		David Hund - http://valuedstandards.com
+	License: 		DoWhatEverYouWantButBeNice™
+	Description: 	Various CSS button styles. Semi-crossbrowser.
+
+	Note: 			- Uses inline(!) IE hacks for maintainability etc.
+					- Uses data-uri's for browsers not supporting CSS gradients
+					- Please don't just copy. Use what you need and cleanup!
+
+	TODO: 			check out http://somadesign.ca/demos/buttons.html for some more ideas!
+*/
+
+button, .button, ul.button-bar li a {
+	/* 	(X-browser-) inline-block */
+	position: relative; /* Google Thinks So: http://vlst.nl/x/3u */
+	display: -moz-inline-stack;  /* Fx: TODO: also test -moz-inline-box?! */
+	display: inline-block; /* Proper */
+	*zoom: 1; /* IE 6-7 */
+	*display: inline; /* IE 6-7 */
+
+	/*	Padding/Margins */
+	padding: .5em 1em;
+	margin: 0 .5em;
+
+	/*	Generic Font Styles */
+	/* outline: none; */ /* Here be dragons! */
+	font: normal 14px/100% Arial, Helvetica, sans-serif;
+	text-align: center;
+	text-decoration: none;
+	cursor: pointer;
+	vertical-align: middle; /* from: http://vlst.nl/x/3v */
+	*vertical-align: auto; /* from: http://vlst.nl/x/3v */
+
+	/*	Text-Shadow */
+	text-shadow: 0 1px 1px rgba(0,0,0,.4); /* Outset */
+	text-shadow: 0 1px 0 rgba(255,255,255,.6); /* Inset */
+
+	/*	Border Radius */
+	-webkit-border-radius: .3em;
+	-moz-border-radius: .3em;
+	-o-border-radius: .3em; /* Opera removed support but it might work in older (pre 10.5) versions? */
+	border-radius: .3em;
+
+	/*	Box Shadow */
+	-webkit-box-shadow: 0 0 3px rgba(0,0,0,.5);
+	-moz-box-shadow: 0 0 3px rgba(0,0,0,.5);
+	box-shadow: 0 0 3px rgba(0,0,0,.5);
+	/* We could simulate this in IE with ('glow') filters, but we will not... */
+
+	/*	DEFAULT Color: Grey */
+	color: #333;
+	border: solid 1px #999;
+	background: #EEE; /* Basic fallback */
+	/* Fx < 3.6 & other browsers supporting data uri's */
+	background: url("data:image/jpeg,%FF%D8%FF%E0%00%10JFIF%00%01%01%00%00%01%00%01%00%00%FF%DB%00C%00%08%06%06%07%06%05%08%07%07%07%09%09%08%0A%0C%14%0D%0C%0B%0B%0C%19%12%13%0F%14%1D%1A%1F%1E%1D%1A%1C%1C%20%24.'%20%22%2C%23%1C%1C(7)%2C01444%1F'9%3D82%3C.342%FF%DB%00C%01%09%09%09%0C%0B%0C%18%0D%0D%182!%1C!22222222222222222222222222222222222222222222222222%FF%C0%00%11%08%002%00%01%03%01%22%00%02%11%01%03%11%01%FF%C4%00%17%00%01%01%01%01%00%00%00%00%00%00%00%00%00%00%00%00%00%03%02%07%FF%C4%00%15%10%01%01%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%12%FF%C4%00%14%01%01%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%FF%C4%00%14%11%01%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%FF%DA%00%0C%03%01%00%02%11%03%11%00%3F%00%EF%B4%23%40%25B4%02T%23%400%00%3F%FF%D9") repeat-x 0 0;
+	/* Webkit/Safari */
+	background: -webkit-gradient(linear, left top, left bottom, from(#FFF), to(#DDD));
+	/* Fx 3.6+ */
+	background: -moz-linear-gradient(top,  #FFF,  #DDD);
+	/* We could have this in IE with ('gradient') filters, but we will not... */
+}
+
+/* Ugly hack: but Fx needs this to have INPUT elements the same height as A elements (?) */
+button, input.button, ul.button-bar li a,  x:-moz-any-link { padding: .35em 1em; }
+
+/* 	Hover / Active styles/colors */
+button:hover,
+button:active,
+.button:hover,
+.button:active,
+.button.active,
+ul.button-bar li a:hover,
+ul.button-bar li a:active {
+	/* Default: Grey */
+	border-color: #666;
+	background: #FFF;
+	/* Configure OTHER image URiS for Fx < 3.6 & other browsers supporting data uri's */
+/* 	background: url("data:image/jpeg,%FF%D8%FF%E0%00%10JFIF%00%01%01%00%00%01%00%01%00%00%FF%DB%00C%00%08%06%06%07%06%05%08%07%07%07%09%09%08%0A%0C%14%0D%0C%0B%0B%0C%19%12%13%0F%14%1D%1A%1F%1E%1D%1A%1C%1C%20%24.'%20%22%2C%23%1C%1C(7)%2C01444%1F'9%3D82%3C.342%FF%DB%00C%01%09%09%09%0C%0B%0C%18%0D%0D%182!%1C!22222222222222222222222222222222222222222222222222%FF%C0%00%11%08%002%00%01%03%01%22%00%02%11%01%03%11%01%FF%C4%00%17%00%01%01%01%01%00%00%00%00%00%00%00%00%00%00%00%00%00%03%02%07%FF%C4%00%15%10%01%01%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%12%FF%C4%00%14%01%01%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%FF%C4%00%14%11%01%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%FF%DA%00%0C%03%01%00%02%11%03%11%00%3F%00%EF%B4%23%40%25B4%02T%23%400%00%3F%FF%D9") repeat-x 0 0; */
+	background: -webkit-gradient(linear, left top, left bottom, from(#DDD), to(#FFF));
+	background: -moz-linear-gradient(top,  #DDD,  #FFF);
+	text-shadow: none;
+}
+button:active, .button:active, ul.button-bar li a:active { top: 1px; /* Popup the button a bit */ }
+
+/*	ALT Color: orange */
+.orange, .green, .blue { color: #FFF; text-shadow: 0 1px 1px rgba(0,0,0,.4); }
+
+.orange {
+	border-color: #da7c0c;
+	background: #f78d1d;
+	background: -webkit-gradient(linear, left top, left bottom, from(#faa51a), to(#f47a20));
+	background: -moz-linear-gradient(top,  #faa51a,  #f47a20);
+}
+.orange:hover, .orange:active, .orange.active {
+	border-color: #da7c0c;
+	background: #f47a20;
+	background: -webkit-gradient(linear, left top, left bottom, from(#f47a20), to(#faa51a));
+	background: -moz-linear-gradient(top,  #f47a20,  #faa51a);
+}
+/*	ALT Color: green */
+.green {
+	border-color: #6C8F00;
+	background: #90BF00;
+	background: -webkit-gradient(linear, left top, left bottom, from(#90BF00), to(#789F00));
+	background: -moz-linear-gradient(top,  #90BF00,  #789F00);
+}
+.green:active, .green:hover, .green.active {
+	border-color: #6C8F00;
+	background: #789F00;
+	background: -webkit-gradient(linear, left top, left bottom, from(#789F00), to(#90BF00));
+	background: -moz-linear-gradient(top,  #789F00,  #90BF00);
+}
+/*	ALT Color: blue */
+.blue {
+	border-color: #0069BF;
+	background: #0084EF;
+	background: -webkit-gradient(linear, left top, left bottom, from(#0084EF), to(#0072CF));
+	background: -moz-linear-gradient(top,  #0084EF,  #0072CF);
+}
+.blue:active, .blue:hover, .blue.active {
+	border-color: #0069BF;
+	background: #0072CF;
+	background: -webkit-gradient(linear, left top, left bottom, from(#0072CF), to(#0084EF));
+	background: -moz-linear-gradient(top,  #0072CF,  #0084EF);
+}
+
+/* Fun with Generated Content and Unicode :) */
+/* Only seems to work on A elements though... */
+.fun:after { content: "⎋"; } /* etc. */
+.fun2:after { content: "➔"; }
+.fun3:after { content: "▼"; }
+.fun::after { margin-left: 1em; padding-left: 1em ;border-left: 1px solid #666; }
+
+/* ALT FORMS */
+.inset { 
+	-webkit-box-shadow: inset 0 0 3px rgba(0,0,0,.5);
+	-moz-box-shadow: inset 0 0 3px rgba(0,0,0,.5); 
+	box-shadow: inset 0 0 3px rgba(0,0,0,.5);
+}
+
+.rounded { -webkit-border-radius: 1em; -moz-border-radius: 1em; border-radius: 1em; }
+.square, .bullet { -webkit-border-radius: 0; -moz-border-radius: 0; border-radius: 0; }
+.bullet { -webkit-border-top-right-radius: 1em; -webkit-border-bottom-right-radius: 1em; -moz-border-radius-topright: 1em; -moz-border-radius-bottomright: 1em; border-top-right-radius: 1em; border-bottom-right-radius: 1em; }
+.large { font-size: 1.4em; }
+.small { font-size: .7em; padding: .4em .8em; -webkit-border-radius: 2px 2px; -moz-border-radius: 2px 2px; border-radius: 2px 2px; }
+
+.combined, ul.button-bar li a { 
+	margin: 0; 
+	-webkit-border-radius: 0; 
+	-moz-border-radius: 0; 
+	border-radius: 0; 
+	border-width: 1px 0; 
+}
+.combined.first,
+.combined:first-child,
+ul.button-bar li:first-child a { 
+	padding-left: 1.5em; 
+	-webkit-border-top-left-radius: 1em; 
+	-webkit-border-bottom-left-radius: 1em; 
+	-moz-border-radius-topleft: 1em; 
+	-moz-border-radius-bottomleft: 1em; 
+	border-top-left-radius: 1em; 
+	border-bottom-left-radius: 1em; 
+}
+.combined.last,
+.combined:last-child,
+ul.button-bar li:last-child a { 
+	padding-right: 1.5em; 
+	-webkit-border-top-right-radius: 1em; 
+	-webkit-border-bottom-right-radius: 1em; 
+	-moz-border-radius-topright: 1em; 
+	-moz-border-radius-bottomright: 1em; 
+	border-top-right-radius: 1em; 
+	border-bottom-right-radius: 1em; 
+}
+.combined:hover, .combined:active { border-color: #999; }
+.combined.square { -webkit-border-radius: 0; -moz-border-radius: 0; border-radius: 0; }
+
+/* Combined buttons in a bar, in a list. Better semantics and accessibility */
+ul.button-bar { list-style-type: none; margin: 0; padding: 0; }
+ul.button-bar li { display: inline; margin: 0; padding: 0; }
+ul.button-bar li a { /* Same as .button! */}
+
+/* .round with extra span :-( */
+.round {
+	-webkit-border-radius: 1em; 
+	-moz-border-radius: 1em; 
+	border-radius: 1em;
+	padding: .5em;
+}
+.round span { position: absolute; left: -999em; /* Hide tekst */ }
+.eject:before { content: "✿"; } /* etc. .eject should be appropriate to the icon obviously */
+.ok:before { content: "✔"; }
+.delete:before { content: "✖"; }
+.go-left:before { content: "←"; } 
+.go-right:before { content: "→"; }
+
+/* .round2 without! extra span :-) */
+.round2 {
+	-webkit-border-radius: 1em; 
+	-moz-border-radius: 1em; 
+	border-radius: 1em;
+	padding: .5em .6em; /* Webkit */
+	text-indent: -999em;
+}
+/* Ugly hack: but Fx needs this */
+.round2,  x:-moz-any-link { padding: .5em 1em; }
+.round2:after { content: "✔"; float: left; text-indent: 0; }
+/* Ugly hack: but Fx needs this */
+.round2:after,  x:-moz-any-link { margin-left:  -.35em; }
+
+/*	=================================== / BUTTONS =============================== */
