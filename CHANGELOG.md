@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.1](https://github.com/davidhund/vs-css/compare/v1.2.0...v1.2.1) (2026-06-16)
+
+
+### Bug Fixes
+
+* include tokens folder in setup script copy ([77bb3f6](https://github.com/davidhund/vs-css/commit/77bb3f618513deabb499542b78a657acdc880b05))
+
 ## [1.2.0](https://github.com/davidhund/vs-css/compare/v1.1.0...v1.2.0) (2026-06-16)
 
 
