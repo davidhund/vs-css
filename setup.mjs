@@ -119,6 +119,20 @@ async function setup() {
 		console.log(`  ✓ ${key}`);
 	}
 
+	// Add devDependencies
+	console.log("\n📦 Adding devDependencies...");
+	const sourcePackageJsonPath = resolve(sourceRoot, "package.json");
+	const sourcePackageJson = JSON.parse(readFileSync(sourcePackageJsonPath, "utf-8"));
+
+	if (!packageJson.devDependencies) {
+		packageJson.devDependencies = {};
+	}
+
+	for (const [key, value] of Object.entries(sourcePackageJson.devDependencies || {})) {
+		packageJson.devDependencies[key] = value;
+		console.log(`  ✓ ${key}`);
+	}
+
 	try {
 		writeFileSync(packageJsonPath, `${JSON.stringify(packageJson, null, "\t")}\n`);
 	} catch (err) {
@@ -130,7 +144,7 @@ async function setup() {
 	// Summary
 	console.log("\n✅ Setup complete!\n");
 	console.log("Next steps:");
-	console.log("  1. npm install (to install devDependencies)");
+	console.log("  1. npm install (to install added devDependencies)");
 	console.log("  2. npm run css:build (to build CSS)");
 	console.log("  3. npm run css:tokens (to generate tokens)");
 	console.log("\nAvailable commands:");
