@@ -25,7 +25,7 @@ const filesToCopy = [
 	"biome.json",
 ];
 
-const foldersToCopy = ["css"];
+const foldersToCopy = ["css", "tokens"];
 
 async function setup() {
 	console.log("\n📦 vs-css setup\n");
@@ -67,14 +67,15 @@ async function setup() {
 		}
 	}
 
-	// Copy CSS folder
-	console.log("\n📁 Copying CSS folder...");
+	// Copy folders
+	console.log("\n📁 Copying folders...");
 	for (const folder of foldersToCopy) {
 		const src = resolve(sourceRoot, folder);
-		const dest = resolve(projectRoot, resolvedCssDir);
+		const dest = folder === "css" ? resolve(projectRoot, resolvedCssDir) : resolve(projectRoot, folder);
 		try {
 			cpSync(src, dest, { recursive: true });
-			console.log(`  ✓ css/ → ${resolvedCssDir}/`);
+			const destPath = folder === "css" ? `${resolvedCssDir}/` : `${folder}/`;
+			console.log(`  ✓ ${folder}/ → ${destPath}`);
 		} catch (err) {
 			console.error(`  ✗ Failed to copy ${folder}: ${err.message}`);
 			rl.close();
