@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.2](https://github.com/davidhund/vs-css/compare/v1.2.1...v1.2.2) (2026-06-16)
+
+
+### Bug Fixes
+
+* include tokens folder in npm package files ([e90e5cf](https://github.com/davidhund/vs-css/commit/e90e5cf3a3233640dacb0ea04333c2b50d830ff0))
+
 ## [1.2.1](https://github.com/davidhund/vs-css/compare/v1.2.0...v1.2.1) (2026-06-16)
 
 
