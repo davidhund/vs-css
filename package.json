@@ -23,6 +23,7 @@
 	"files": [
 		"dist/",
 		"css/",
+		"tokens/",
 		"build.mjs",
 		"build-tokens.mjs",
 		"setup.mjs",
