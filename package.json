@@ -18,7 +18,7 @@
 		"./tokens/semantic": "./dist/tokens/semantic.tokens.json"
 	},
 	"bin": {
-		"vs-css-setup": "./setup.mjs"
+		"vs-css-setup": "setup.mjs"
 	},
 	"files": [
 		"dist/",
