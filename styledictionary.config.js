@@ -1,6 +1,7 @@
 import StyleDictionary from "style-dictionary";
 
 const PREFIX = "vs";
+const cssDir = process.env.npm_package_config_cssDir || "./css";
 
 // Custom format for CSS variables with light-dark() support
 StyleDictionary.registerFormat({
@@ -71,7 +72,7 @@ export default {
 	platforms: {
 		css: {
 			transformGroup: "css",
-			buildPath: "css/tokens/",
+			buildPath: `${cssDir}/tokens/`,
 			files: [
 				{
 					destination: "primitive.css",

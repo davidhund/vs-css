@@ -4,6 +4,7 @@ import { transform } from "lightningcss";
 import { readFileSync, writeFileSync, mkdirSync } from "fs";
 import { dirname } from "path";
 
+const cssDir = process.env.npm_package_config_cssDir || "./css";
 const isWatch = process.argv.includes("--watch");
 const isMinify = process.env.NODE_ENV === "production";
 
@@ -24,7 +25,7 @@ function resolveImports(file, processed = new Set()) {
 
 	// Replace @import with file contents
 	content = content.replace(/@import\s+['"](.+?)['"]\s+layer\((\w+)\);?/g, (match, importPath) => {
-		const resolvedPath = importPath.startsWith("./") ? `css/${importPath.slice(2)}` : importPath;
+		const resolvedPath = importPath.startsWith("./") ? `${cssDir}/${importPath.slice(2)}` : importPath;
 		try {
 			return resolveImports(resolvedPath, processed);
 		} catch {
@@ -37,11 +38,11 @@ function resolveImports(file, processed = new Set()) {
 
 async function build() {
 	try {
-		let input = resolveImports("css/main.css");
+		let input = resolveImports(`${cssDir}/main.css`);
 
 		const result = transform({
 			code: Buffer.from(input),
-			filename: "css/main.css",
+			filename: `${cssDir}/main.css`,
 			minify: isMinify,
 			sourceMap: !isMinify,
 			targets,
