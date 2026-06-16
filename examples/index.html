@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>vs-css — CSS Architecture Kitchen Sink</title>
+		<link rel="stylesheet" href="../dist/css/main.css">
+		<link rel="stylesheet" href="./theme-warm.css">
+		<style>
+			html {
+				scroll-behavior: smooth;
+			}
+
+			body {
+				padding: var(--vs-space-md);
+			}
+
+			.header {
+				margin-bottom: var(--vs-space-xl);
+			}
+
+			.header h1 {
+				margin-bottom: var(--vs-space-sm);
+			}
+
+			.section {
+				margin-bottom: var(--vs-space-2xl);
+				padding: var(--vs-space-lg);
+				background-color: var(--vs-color-bg-subtle);
+				border-radius: var(--vs-radius-md);
+			}
+
+			.section h2 {
+				margin-bottom: var(--vs-space-md);
+				border-bottom: var(--vs-border-1) solid var(--vs-color-border-default);
+				padding-bottom: var(--vs-space-sm);
+			}
+
+			.demo-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+				gap: var(--vs-space-md);
+				margin-top: var(--vs-space-md);
+			}
+
+			.swatch {
+				padding: var(--vs-space-md);
+				border-radius: var(--vs-radius-md);
+				text-align: center;
+				font-size: var(--vs-font-size-sm);
+				font-weight: var(--vs-font-weight-medium);
+			}
+
+			.controls {
+				display: flex;
+				gap: var(--vs-space-md);
+				flex-wrap: wrap;
+				margin-bottom: var(--vs-space-lg);
+			}
+
+			.controls button {
+				padding: var(--vs-space-2) var(--vs-space-3);
+			}
+
+			code {
+				background-color: var(--vs-color-bg-subtle);
+				padding: var(--vs-space-1) var(--vs-space-2);
+				border-radius: var(--vs-radius-sm);
+				font-family: var(--vs-typography-mono);
+			}
+
+			.focus-demo {
+				margin-top: var(--vs-space-md);
+				padding: var(--vs-space-md);
+				border: var(--vs-border-1) solid var(--vs-color-border-default);
+				border-radius: var(--vs-radius-md);
+			}
+
+			input, textarea {
+				width: 100%;
+				margin-bottom: var(--vs-space-sm);
+			}
+
+			@media (prefers-reduced-motion: reduce) {
+				html {
+					scroll-behavior: auto;
+				}
+
+				.animated {
+					animation: none !important;
+					transition: none !important;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="center">
+			<div class="header">
+				<h1>vs-css Kitchen Sink</h1>
+				<p>A comprehensive example of the CSS architecture in action.</p>
+			</div>
+
+			<div class="controls">
+				<button onclick="toggleDarkMode()">Toggle Dark Mode</button>
+				<button onclick="toggleReducedMotion()">Toggle Motion Reduction</button>
+				<button onclick="toggleWarmTheme()">Toggle Warm Theme</button>
+			</div>
+
+			<!-- Color tokens -->
+			<section class="section">
+				<h2>Color Tokens (Light + Dark)</h2>
+				<p>All colors adapt automatically based on <code>color-scheme</code>.</p>
+
+				<h3>Text Colors</h3>
+				<div class="demo-grid">
+					<div class="swatch" style="background-color: var(--vs-color-bg-subtle); color: var(--vs-color-text-default);">text-default</div>
+					<div class="swatch" style="background-color: var(--vs-color-bg-subtle); color: var(--vs-color-text-muted);">text-muted</div>
+					<div class="swatch" style="background-color: var(--vs-color-bg-subtle); color: var(--vs-color-text-accent);">text-accent</div>
+					<div class="swatch" style="background-color: var(--vs-color-bg-subtle); color: var(--vs-color-text-error);">text-error</div>
+				</div>
+
+				<h3>Background Colors</h3>
+				<div class="demo-grid">
+					<div class="swatch" style="background-color: var(--vs-color-bg-default); color: var(--vs-color-text-default); border: var(--vs-border-1) solid var(--vs-color-border-default);">bg-default</div>
+					<div class="swatch" style="background-color: var(--vs-color-bg-subtle); color: var(--vs-color-text-default);">bg-subtle</div>
+					<div class="swatch" style="background-color: var(--vs-color-bg-inverse); color: var(--vs-color-text-inverse);">bg-inverse</div>
+				</div>
+			</section>
+
+			<!-- Typography -->
+			<section class="section">
+				<h2>Typography Scale</h2>
+				<p>All font sizes use semantic tokens.</p>
+
+				<h3 style="font-size: var(--vs-font-size-4xl);">Heading 1 (4xl)</h3>
+				<h3 style="font-size: var(--vs-font-size-3xl);">Heading 2 (3xl)</h3>
+				<h3 style="font-size: var(--vs-font-size-2xl);">Heading 3 (2xl)</h3>
+				<p style="font-size: var(--vs-font-size-lg);">Large body (lg)</p>
+				<p style="font-size: var(--vs-font-size-base);">Regular body (base)</p>
+				<p style="font-size: var(--vs-font-size-sm);">Small text (sm)</p>
+
+				<div style="font-family: var(--vs-typography-mono); margin-top: var(--vs-space-md);">
+					<p>Monospace font (Monaco fallback)</p>
+				</div>
+			</section>
+
+			<!-- Focus styles -->
+			<section class="section">
+				<h2>Focus Visibility</h2>
+				<p>Uses double-ring outline with <code>light-dark()</code> for dark mode.</p>
+
+				<div class="focus-demo">
+					<label for="focus-input">Try tabbing to this input:</label>
+					<input type="text" id="focus-input" placeholder="Focus here to see the double-ring outline">
+					<p><code>--vs-color-border-focus</code> is the source-of-truth for all focus outlines.</p>
+					<p>The outline survives Windows High Contrast Mode via Forced Colors spec.</p>
+				</div>
+			</section>
+
+			<!-- Dynamic Contrast -->
+			<section class="section">
+				<h2>Dynamic Contrast with <code>contrast-color()</code></h2>
+				<p>Modern CSS function (Baseline Newly Available 2026) that automatically chooses black or white text for better contrast. Try picking colors below.</p>
+
+				<div style="display: grid; gap: var(--vs-space-md); grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)); margin-top: var(--vs-space-lg);">
+					<!-- These use inline styles to demonstrate dynamic contrast -->
+					<div style="
+						--color: #0066ff;
+						background-color: var(--color);
+						padding: var(--vs-space-md);
+						border-radius: var(--vs-radius-md);
+						text-align: center;
+						color: contrast-color(var(--color));
+						font-weight: var(--vs-font-weight-bold);
+					">
+						Blue Background
+					</div>
+
+					<div style="
+						--color: #ff6b6b;
+						background-color: var(--color);
+						padding: var(--vs-space-md);
+						border-radius: var(--vs-radius-md);
+						text-align: center;
+						color: contrast-color(var(--color));
+						font-weight: var(--vs-font-weight-bold);
+					">
+						Red Background
+					</div>
+
+					<div style="
+						--color: #ffd93d;
+						background-color: var(--color);
+						padding: var(--vs-space-md);
+						border-radius: var(--vs-radius-md);
+						text-align: center;
+						color: contrast-color(var(--color));
+						font-weight: var(--vs-font-weight-bold);
+					">
+						Yellow Background
+					</div>
+
+					<div style="
+						--color: #22a551;
+						background-color: var(--color);
+						padding: var(--vs-space-md);
+						border-radius: var(--vs-radius-md);
+						text-align: center;
+						color: contrast-color(var(--color));
+						font-weight: var(--vs-font-weight-bold);
+					">
+						Green Background
+					</div>
+				</div>
+
+				<div style="margin-top: var(--vs-space-lg); padding: var(--vs-space-md); background: var(--vs-color-bg-subtle); border-radius: var(--vs-radius-md);">
+					<p><strong>How it works:</strong> Text color is calculated by the browser to ensure WCAG AA contrast, with no JavaScript needed.</p>
+					<p><strong>Browser support:</strong> Chrome 147+, Firefox 146+, Safari 26 (2026). Gracefully falls back to semantic text color in older browsers.</p>
+					<p><strong>Best for:</strong> User-selected colors, dynamic theming, content overlaid on images. Not recommended for semantic color choices (use <code>color.text.*</code> tokens instead).</p>
+				</div>
+			</section>
+
+			<!-- Form elements -->
+			<section class="section">
+				<h2>Form Elements</h2>
+
+				<div>
+					<label for="text-input">Text Input:</label>
+					<input type="text" id="text-input" placeholder="Type something">
+				</div>
+
+				<div>
+					<label for="select-demo">Select:</label>
+					<select id="select-demo">
+						<option>Option 1</option>
+						<option>Option 2</option>
+						<option>Option 3</option>
+					</select>
+				</div>
+
+				<div>
+					<label for="textarea-demo">Textarea:</label>
+					<textarea id="textarea-demo" rows="4" placeholder="Type here"></textarea>
+				</div>
+
+				<div>
+					<label>
+						<input type="checkbox" id="checkbox-demo"> Checkbox option
+					</label>
+				</div>
+
+				<div>
+					<button>Primary Button</button>
+					<button disabled>Disabled Button</button>
+				</div>
+			</section>
+
+			<!-- Layout primitives -->
+			<section class="section">
+				<h2>Layout Primitives</h2>
+
+				<h3>.stack — Vertical rhythm</h3>
+				<div class="stack" style="gap: var(--vs-space-sm);">
+					<div style="padding: var(--vs-space-sm); background: var(--vs-color-bg-subtle); border-radius: var(--vs-radius-sm);">Item 1</div>
+					<div style="padding: var(--vs-space-sm); background: var(--vs-color-bg-subtle); border-radius: var(--vs-radius-sm);">Item 2</div>
+					<div style="padding: var(--vs-space-sm); background: var(--vs-color-bg-subtle); border-radius: var(--vs-radius-sm);">Item 3</div>
+				</div>
+
+				<h3 style="margin-top: var(--vs-space-lg);">.cluster — Flexible wrap</h3>
+				<div class="cluster" style="gap: var(--vs-space-sm);">
+					<span style="padding: var(--vs-space-1) var(--vs-space-2); background: var(--vs-color-accent-default); color: white; border-radius: var(--vs-radius-sm);">Tag 1</span>
+					<span style="padding: var(--vs-space-1) var(--vs-space-2); background: var(--vs-color-accent-default); color: white; border-radius: var(--vs-radius-sm);">Tag 2</span>
+					<span style="padding: var(--vs-space-1) var(--vs-space-2); background: var(--vs-color-accent-default); color: white; border-radius: var(--vs-radius-sm);">Tag 3</span>
+					<span style="padding: var(--vs-space-1) var(--vs-space-2); background: var(--vs-color-accent-default); color: white; border-radius: var(--vs-radius-sm);">Tag 4</span>
+				</div>
+
+				<h3 style="margin-top: var(--vs-space-lg);">.grid — Responsive grid</h3>
+				<div class="grid" style="gap: var(--vs-space-md); --grid-min: 10rem;">
+					<div style="padding: var(--vs-space-md); background: var(--vs-color-bg-subtle); border-radius: var(--vs-radius-md); text-align: center;">Card 1</div>
+					<div style="padding: var(--vs-space-md); background: var(--vs-color-bg-subtle); border-radius: var(--vs-radius-md); text-align: center;">Card 2</div>
+					<div style="padding: var(--vs-space-md); background: var(--vs-color-bg-subtle); border-radius: var(--vs-radius-md); text-align: center;">Card 3</div>
+					<div style="padding: var(--vs-space-md); background: var(--vs-color-bg-subtle); border-radius: var(--vs-radius-md); text-align: center;">Card 4</div>
+				</div>
+			</section>
+
+			<!-- Utilities -->
+			<section class="section">
+				<h2>Utilities</h2>
+
+				<h3>.truncate — Text Truncation</h3>
+				<p class="truncate">This is a very long line of text that will be truncated with an ellipsis because it exceeds the container width and we&rsquo;re using the .truncate utility class.</p>
+
+				<p class="truncate" style="--truncate-lines: 2;">This is a paragraph with multiple lines. The .truncate utility can be configured with the --truncate-lines custom property to show multiple lines before truncating. This paragraph is set to 2 lines.</p>
+
+				<h3 style="margin-top: var(--vs-space-lg);">.visually-hidden — Accessible Hide</h3>
+				<p>The following text is visible only to screen readers:</p>
+				<span class="visually-hidden">This is hidden from sighted users but visible to assistive technology.</span>
+				<p>(Check your screen reader or devtools to see it)</p>
+
+				<h3 style="margin-top: var(--vs-space-lg);">.flow — Prose Rhythm</h3>
+				<div class="flow" style="--flow-space: var(--vs-space-md); padding: var(--vs-space-md); background: var(--vs-color-bg-subtle); border-radius: var(--vs-radius-md);">
+					<p>Paragraph 1: Each sibling element gets consistent spacing via the .flow utility.</p>
+					<p>Paragraph 2: This uses the adjacent sibling combinator and a custom property for control.</p>
+					<p>Paragraph 3: Perfect for articles, blog posts, and prose-heavy layouts.</p>
+				</div>
+			</section>
+
+			<!-- Footer -->
+			<footer style="margin-top: var(--vs-space-2xl); padding-top: var(--vs-space-lg); border-top: var(--vs-border-1) solid var(--vs-color-border-default); text-align: center; color: var(--vs-color-text-muted);">
+				<p><code>@davidhund/vs-css</code> — Modern CSS Architecture Boilerplate</p>
+				<p>Built with standards-based CSS, light-dark(), @layers, and design tokens.</p>
+			</footer>
+		</div>
+
+		<script>
+			function toggleDarkMode() {
+				const html = document.documentElement;
+				const current = html.style.colorScheme || '';
+				html.style.colorScheme = current === 'dark' ? '' : 'dark';
+				console.log('Dark mode:', html.style.colorScheme || 'auto (system)');
+			}
+
+			function toggleReducedMotion() {
+				const body = document.body;
+				body.style.animation = body.style.animation ? 'none' : '';
+				console.log('Reduced motion toggled');
+			}
+
+			function toggleWarmTheme() {
+				const html = document.documentElement;
+				if (html.hasAttribute('data-theme')) {
+					html.removeAttribute('data-theme');
+					console.log('Theme: default (cool blues)');
+				} else {
+					html.setAttribute('data-theme', 'warm');
+					console.log('Theme: warm (oranges & roses)');
+				}
+			}
+
+			// Announce on load
+			console.log('✓ vs-css kitchen sink loaded');
+			console.log('Try: toggleDarkMode(), toggleWarmTheme(), or toggleReducedMotion() in console');
+		</script>
+	</body>
+</html>

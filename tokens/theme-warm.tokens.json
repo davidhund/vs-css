@@ -1,0 +1,198 @@
+{
+	"$schema": "https://tokens.design/schema/draft-2024-12/schema.json",
+	"font": {
+		"family": {
+			"sans": {
+				"$type": "fontFamily",
+				"$value": "'Inter', 'Segoe UI', 'Helvetica Neue', system-ui, -apple-system, sans-serif"
+			},
+			"serif": {
+				"$type": "fontFamily",
+				"$value": "'Crimson Text', 'Georgia', serif"
+			},
+			"mono": {
+				"$type": "fontFamily",
+				"$value": "'Fira Code', 'Monaco', 'Courier New', monospace"
+			}
+		}
+	},
+	"color": {
+		"flexoki": {
+			"paper": { "$type": "color", "$value": "#FFFCF0" },
+			"red-50": { "$type": "color", "$value": "#FFE1D5" },
+			"red-500": { "$type": "color", "$value": "#E8705F" },
+			"red-700": { "$type": "color", "$value": "#D14D41" },
+			"orange-50": { "$type": "color", "$value": "#FFCABB" },
+			"orange-500": { "$type": "color", "$value": "#EC8B49" },
+			"orange-700": { "$type": "color", "$value": "#DA702C" },
+			"orange-800": { "$type": "color", "$value": "#BC5215" },
+			"yellow-50": { "$type": "color", "$value": "#F1D67E" },
+			"yellow-500": { "$type": "color", "$value": "#DFB431" },
+			"yellow-700": { "$type": "color", "$value": "#D0A215" },
+			"magenta-500": { "$type": "color", "$value": "#E47DA8" },
+			"magenta-700": { "$type": "color", "$value": "#CE5D97" },
+			"base-50": { "$type": "color", "$value": "#F2F0E5" },
+			"base-100": { "$type": "color", "$value": "#E6E4D9" },
+			"base-300": { "$type": "color", "$value": "#B7B5AC" },
+			"base-600": { "$type": "color", "$value": "#6F6E69" },
+			"base-800": { "$type": "color", "$value": "#403E3C" },
+			"base-900": { "$type": "color", "$value": "#282726" }
+		},
+		"neutral": {
+			"0": { "$type": "color", "$value": "#FFFCF0" },
+			"900": { "$type": "color", "$value": "#282726" }
+		},
+		"green": {
+			"500": { "$type": "color", "$value": "#22a551" },
+			"700": { "$type": "color", "$value": "#1a7f3f" }
+		}
+	},
+	"text": {
+		"default": {
+			"$type": "color",
+			"$value": "#000",
+			"$extensions": {
+				"vs": {
+					"light": "{color.flexoki.base-900}",
+					"dark": "{color.flexoki.paper}"
+				}
+			}
+		},
+		"muted": {
+			"$type": "color",
+			"$value": "#000",
+			"$extensions": {
+				"vs": {
+					"light": "{color.flexoki.base-600}",
+					"dark": "{color.flexoki.base-100}"
+				}
+			}
+		},
+		"inverse": {
+			"$type": "color",
+			"$value": "#000",
+			"$extensions": {
+				"vs": {
+					"light": "{color.flexoki.paper}",
+					"dark": "{color.flexoki.base-900}"
+				}
+			}
+		},
+		"accent": {
+			"$type": "color",
+			"$value": "#000",
+			"$extensions": {
+				"vs": {
+					"light": "{color.flexoki.orange-800}",
+					"dark": "{color.flexoki.orange-500}"
+				}
+			}
+		},
+		"error": {
+			"$type": "color",
+			"$value": "#000",
+			"$extensions": {
+				"vs": {
+					"light": "{color.flexoki.red-700}",
+					"dark": "{color.flexoki.red-500}"
+				}
+			}
+		},
+		"success": {
+			"$type": "color",
+			"$value": "#000",
+			"$extensions": {
+				"vs": {
+					"light": "{color.green.700}",
+					"dark": "{color.green.500}"
+				}
+			}
+		}
+	},
+	"bg": {
+		"default": {
+			"$type": "color",
+			"$value": "#000",
+			"$extensions": {
+				"vs": {
+					"light": "{color.flexoki.paper}",
+					"dark": "{color.flexoki.base-900}"
+				}
+			}
+		},
+		"subtle": {
+			"$type": "color",
+			"$value": "#000",
+			"$extensions": {
+				"vs": {
+					"light": "{color.flexoki.base-50}",
+					"dark": "{color.flexoki.base-800}"
+				}
+			}
+		},
+		"inverse": {
+			"$type": "color",
+			"$value": "#000",
+			"$extensions": {
+				"vs": {
+					"light": "{color.flexoki.base-900}",
+					"dark": "{color.flexoki.paper}"
+				}
+			}
+		}
+	},
+	"border": {
+		"default": {
+			"$type": "color",
+			"$value": "#000",
+			"$extensions": {
+				"vs": {
+					"light": "{color.flexoki.base-300}",
+					"dark": "{color.flexoki.base-600}"
+				}
+			}
+		},
+		"focus": {
+			"$type": "color",
+			"$value": "#000",
+			"$extensions": {
+				"vs": {
+					"light": "{color.flexoki.orange-800}",
+					"dark": "{color.flexoki.orange-500}"
+				}
+			}
+		},
+		"error": {
+			"$type": "color",
+			"$value": "#000",
+			"$extensions": {
+				"vs": {
+					"light": "{color.flexoki.red-700}",
+					"dark": "{color.flexoki.red-500}"
+				}
+			}
+		}
+	},
+	"accent": {
+		"default": {
+			"$type": "color",
+			"$value": "#000",
+			"$extensions": {
+				"vs": {
+					"light": "{color.flexoki.orange-800}",
+					"dark": "{color.flexoki.orange-500}"
+				}
+			}
+		},
+		"hover": {
+			"$type": "color",
+			"$value": "#000",
+			"$extensions": {
+				"vs": {
+					"light": "{color.flexoki.orange-50}",
+					"dark": "{color.flexoki.base-800}"
+				}
+			}
+		}
+	}
+}

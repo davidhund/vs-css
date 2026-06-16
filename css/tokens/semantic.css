@@ -1,0 +1,25 @@
+:root {
+	color-scheme: light dark;
+	--vs-color-text-default: light-dark(#282726, #fffcf0);
+	--vs-color-text-muted: light-dark(#808080, #d0d0d0);
+	--vs-color-text-inverse: light-dark(#fffcf0, #282726);
+	--vs-color-text-accent: light-dark(#0052cc, #0066ff);
+	--vs-color-text-error: light-dark(#a91f13, #d92d20);
+	--vs-color-text-success: light-dark(#1a7f3f, #22a551);
+	--vs-color-bg-default: light-dark(#fffcf0, #282726);
+	--vs-color-bg-subtle: light-dark(#f5f5f5, #2d2d2d);
+	--vs-color-bg-inverse: light-dark(#282726, #fffcf0);
+	--vs-color-border-default: light-dark(#d0d0d0, #808080);
+	--vs-color-border-focus: light-dark(#0052cc, #0066ff);
+	--vs-color-border-error: light-dark(#a91f13, #d92d20);
+	--vs-color-accent-default: light-dark(#0052cc, #0066ff);
+	--vs-color-accent-hover: light-dark(#f0f7ff, #2d2d2d);
+	--vs-space-xs: 4px;
+	--vs-space-sm: 8px;
+	--vs-space-md: 16px;
+	--vs-space-lg: 24px;
+	--vs-space-xl: 32px;
+	--vs-space-2xl: 48px;
+	--vs-typography-body: 'Inter', 'Segoe UI', 'Helvetica Neue', system-ui, -apple-system, sans-serif;
+	--vs-typography-mono: 'Fira Code', 'Monaco', 'Courier New', monospace;
+}

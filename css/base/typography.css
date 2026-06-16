@@ -1,0 +1,55 @@
+@layer base {
+	html {
+		font-family: var(--vs-typography-body);
+		font-size: var(--vs-font-size-base);
+		line-height: var(--vs-font-line-height-base);
+		color: var(--vs-color-text-default);
+		background-color: var(--vs-color-bg-default);
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+		font-weight: var(--vs-font-weight-bold);
+		line-height: var(--vs-font-line-height-tight);
+	}
+
+	h1 {
+		font-size: var(--vs-font-size-4xl);
+	}
+
+	h2 {
+		font-size: var(--vs-font-size-3xl);
+	}
+
+	h3 {
+		font-size: var(--vs-font-size-2xl);
+	}
+
+	h4 {
+		font-size: var(--vs-font-size-xl);
+	}
+
+	h5, h6 {
+		font-size: var(--vs-font-size-lg);
+	}
+
+	code, pre {
+		font-family: var(--vs-typography-mono);
+	}
+
+	code {
+		font-size: var(--vs-font-size-sm);
+	}
+
+	pre {
+		padding: var(--vs-space-md);
+		overflow-x: auto;
+		background-color: var(--vs-color-bg-subtle);
+		border-radius: var(--vs-radius-md);
+	}
+
+	blockquote {
+		padding-left: var(--vs-space-md);
+		border-left: var(--vs-border-2) solid var(--vs-color-border-default);
+		font-style: italic;
+	}
+}

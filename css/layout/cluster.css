@@ -1,0 +1,13 @@
+@layer layout {
+	.cluster {
+		--cluster-gap: var(--vs-space-md);
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--cluster-gap);
+		align-items: center;
+	}
+
+	.cluster > * {
+		flex-shrink: 0;
+	}
+}

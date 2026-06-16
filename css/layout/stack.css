@@ -1,0 +1,12 @@
+@layer layout {
+	.stack {
+		--stack-gap: var(--vs-space-md);
+		display: flex;
+		flex-direction: column;
+		gap: var(--stack-gap);
+	}
+
+	.stack > * {
+		flex-shrink: 0;
+	}
+}

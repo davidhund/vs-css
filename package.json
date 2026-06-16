@@ -1,0 +1,37 @@
+{
+	"name": "@davidhund/vs-css",
+	"version": "0.1.0",
+	"description": "Modern CSS architecture boilerplate — standards-based, token-driven, layer-aware",
+	"author": "David Hund <david.hund@gmail.com>",
+	"license": "MIT",
+	"homepage": "https://github.com/davidhund/vs-css",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/davidhund/vs-css.git"
+	},
+	"type": "module",
+	"main": "./dist/css/main.css",
+	"exports": {
+		".": "./dist/css/main.css",
+		"./main.css": "./dist/css/main.css",
+		"./tokens/primitive": "./dist/tokens/primitive.tokens.json",
+		"./tokens/semantic": "./dist/tokens/semantic.tokens.json"
+	},
+	"files": [
+		"dist/"
+	],
+	"scripts": {
+		"tokens": "node build-tokens.mjs",
+		"build": "node build.mjs",
+		"dev": "node build.mjs --watch",
+		"lint": "biome lint css/ && stylelint 'css/**/*.css'",
+		"format": "biome format --write css/ *.mjs *.json .stylelintrc.json"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^1.9.4",
+		"lightningcss": "^1.28.0",
+		"style-dictionary": "^4.1.1",
+		"stylelint": "^16.11.0",
+		"stylelint-config-standard": "^37.0.0"
+	}
+}

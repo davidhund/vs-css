@@ -1,0 +1,55 @@
+@layer base {
+	input, button, textarea, select {
+		border: var(--vs-border-1) solid var(--vs-color-border-default);
+		border-radius: var(--vs-radius-md);
+		padding: var(--vs-space-2) var(--vs-space-3);
+		background-color: var(--vs-color-bg-default);
+		color: var(--vs-color-text-default);
+	}
+
+	input[type="text"],
+	input[type="email"],
+	input[type="tel"],
+	input[type="search"],
+	input[type="url"],
+	input[type="number"],
+	textarea,
+	select {
+		width: 100%;
+	}
+
+	textarea {
+		resize: vertical;
+	}
+
+	input[type="checkbox"],
+	input[type="radio"] {
+		width: auto;
+		margin-right: var(--vs-space-1);
+		cursor: pointer;
+	}
+
+	button {
+		cursor: pointer;
+		font-weight: var(--vs-font-weight-medium);
+		background-color: var(--vs-color-accent-default);
+		color: var(--vs-color-bg-default);
+		border-color: var(--vs-color-accent-default);
+	}
+
+	button:hover {
+		background-color: var(--vs-color-accent-hover);
+		border-color: var(--vs-color-accent-hover);
+	}
+
+	button:disabled {
+		opacity: 0.5;
+		cursor: not-allowed;
+	}
+
+	label {
+		display: block;
+		margin-bottom: var(--vs-space-1);
+		font-weight: var(--vs-font-weight-medium);
+	}
+}

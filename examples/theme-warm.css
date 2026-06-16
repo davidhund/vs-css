@@ -1,0 +1,55 @@
+
+/* Warm theme — Flexoki color palette */
+
+/* https://flexoki.com */
+
+[data-theme="warm"] {
+	/* Flexoki color palette (warm) */
+	--vs-color-flexoki-paper: #FFFCF0;
+	--vs-color-flexoki-red-50: #FFE1D5;
+	--vs-color-flexoki-red-500: #E8705F;
+	--vs-color-flexoki-red-700: #D14D41;
+	--vs-color-flexoki-orange-50: #FFCABB;
+	--vs-color-flexoki-orange-500: #EC8B49;
+	--vs-color-flexoki-orange-700: #DA702C;
+	--vs-color-flexoki-orange-800: #BC5215;
+	--vs-color-flexoki-yellow-50: #F1D67E;
+	--vs-color-flexoki-yellow-500: #DFB431;
+	--vs-color-flexoki-yellow-700: #D0A215;
+	--vs-color-flexoki-base-50: #F2F0E5;
+	--vs-color-flexoki-base-100: #E6E4D9;
+	--vs-color-flexoki-base-300: #B7B5AC;
+	--vs-color-flexoki-base-600: #6F6E69;
+	--vs-color-flexoki-base-800: #403E3C;
+	--vs-color-flexoki-base-900: #282726;
+
+	/* Warm-friendly fonts */
+	--vs-typography-body: 'Inter', 'Segoe UI', 'Helvetica Neue', system-ui, -apple-system, sans-serif;
+	--vs-typography-serif: 'Crimson Text', 'Georgia', serif;
+	--vs-typography-mono: 'Fira Code', 'Monaco', 'Courier New', monospace;
+
+	/* Semantic text colors using Flexoki warm dark brown instead of black */
+	--vs-color-text-default: light-dark(#282726, #FFFCF0);
+	--vs-color-text-accent: light-dark(#BC5215, #EC8B49);
+	--vs-color-text-error: light-dark(#D14D41, #E8705F);
+	--vs-color-text-muted: light-dark(#6F6E69, #E6E4D9);
+	--vs-color-text-inverse: light-dark(#FFFCF0, #282726);
+
+	/* Semantic background colors */
+	--vs-color-bg-default: light-dark(#FFFCF0, #282726);
+	--vs-color-bg-subtle: light-dark(#F2F0E5, #403E3C);
+
+	/* Semantic border colors */
+	--vs-color-border-default: light-dark(#B7B5AC, #6F6E69);
+	--vs-color-border-focus: light-dark(#BC5215, #EC8B49);
+	--vs-color-border-error: light-dark(#D14D41, #E8705F);
+
+	/* Semantic accent colors */
+	--vs-color-accent-default: light-dark(#BC5215, #EC8B49);
+	--vs-color-accent-hover: light-dark(#FFCABB, #403E3C);
+
+	/* Additional Flexoki accent colors for UI variation */
+	--accent-warm-orange: #EC8B49;
+	--accent-warm-yellow: #DFB431;
+	--accent-warm-red: #E8705F;
+}

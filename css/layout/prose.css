@@ -1,0 +1,22 @@
+@layer layout {
+	.prose {
+		--vs-prose-width: 65ch;
+		--prose-padding: var(--vs-space-md);
+		display: grid;
+		grid-template-columns:
+			[full-start] minmax(0, 1fr)
+			[prose-start] min(var(--vs-prose-width), 100% - (2 * var(--prose-padding)))
+			[prose-end] minmax(0, 1fr)
+			[full-end];
+		gap: var(--prose-padding);
+	}
+
+	.prose > * {
+		grid-column: prose;
+		max-width: 100%;
+	}
+
+	.breakout {
+		grid-column: full;
+	}
+}

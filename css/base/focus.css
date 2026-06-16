@@ -1,0 +1,12 @@
+@layer base {
+	:focus-visible {
+		outline: 3px solid var(--vs-color-border-focus);
+		outline-offset: 3px;
+		box-shadow: 0 0 0 6px var(--vs-color-bg-default);
+	}
+
+	:focus:not(:focus-visible) {
+		outline: none;
+		box-shadow: none;
+	}
+}

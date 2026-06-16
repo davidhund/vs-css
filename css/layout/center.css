@@ -1,0 +1,8 @@
+@layer layout {
+	.center {
+		--center-max-width: 45rem;
+		margin-inline: auto;
+		max-width: var(--center-max-width);
+		padding-inline: var(--vs-space-md);
+	}
+}

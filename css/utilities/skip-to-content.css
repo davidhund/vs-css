@@ -1,0 +1,17 @@
+@layer utilities {
+	.skip-to-content {
+		position: absolute;
+		top: -40px;
+		left: 0;
+		background: var(--vs-color-accent-default);
+		color: var(--vs-color-bg-default);
+		padding: var(--vs-space-2) var(--vs-space-3);
+		text-decoration: none;
+		z-index: 100;
+		border-radius: var(--vs-radius-md);
+	}
+
+	.skip-to-content:focus {
+		top: 0;
+	}
+}

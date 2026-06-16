@@ -1,0 +1,8 @@
+@layer utilities {
+	.truncate {
+		display: -webkit-box;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: var(--truncate-lines, 1);
+		overflow: hidden;
+	}
+}

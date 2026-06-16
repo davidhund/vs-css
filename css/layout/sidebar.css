@@ -1,0 +1,18 @@
+@layer layout {
+	.sidebar {
+		--sidebar-width: 12rem;
+		--sidebar-gap: var(--vs-space-md);
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--sidebar-gap);
+	}
+
+	.sidebar > :first-child {
+		flex: 0 1 var(--sidebar-width);
+	}
+
+	.sidebar > :last-child {
+		flex: 1 1 calc((100% - var(--sidebar-width)) - var(--sidebar-gap));
+		min-inline-size: 0;
+	}
+}

@@ -1,0 +1,9 @@
+@layer layout {
+	.grid {
+		--grid-min: 15rem;
+		--grid-gap: var(--vs-space-md);
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(var(--grid-min), 1fr));
+		gap: var(--grid-gap);
+	}
+}
