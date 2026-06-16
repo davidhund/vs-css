@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/davidhund/vs-css/compare/v1.0.0...v1.1.0) (2026-06-16)
+
+
+### Features
+
+* add interactive setup script for installable boilerplate ([7515818](https://github.com/davidhund/vs-css/commit/751581814935949d3111464df099d7b46d336ff0))
+
 ## 1.0.0 (2026-06-16)
 
 
