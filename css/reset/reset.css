@@ -5,7 +5,9 @@
 	}
 
 	/* Box sizing rules */
-	*, *::before, *::after {
+	*,
+	*::before,
+	*::after {
 		box-sizing: border-box;
 	}
 
@@ -17,12 +19,22 @@
 	}
 
 	/* Remove default margin in favour of better control in authored CSS */
-	body, h1, h2, h3, h4, p, figure, blockquote, dl, dd {
+	body,
+	h1,
+	h2,
+	h3,
+	h4,
+	p,
+	figure,
+	blockquote,
+	dl,
+	dd {
 		margin-block-end: 0;
 	}
 
 	/* Remove list styles on ul, ol elements with a list role */
-	ul[role="list"], ol[role="list"] {
+	ul[role="list"],
+	ol[role="list"] {
 		list-style: none;
 	}
 
@@ -33,12 +45,21 @@
 	}
 
 	/* Set shorter line heights on headings and interactive elements */
-	h1, h2, h3, h4, button, input, label {
+	h1,
+	h2,
+	h3,
+	h4,
+	button,
+	input,
+	label {
 		line-height: 1.1;
 	}
 
 	/* Balance text wrapping on headings */
-	h1, h2, h3, h4 {
+	h1,
+	h2,
+	h3,
+	h4 {
 		text-wrap: balance;
 	}
 
@@ -49,13 +70,17 @@
 	}
 
 	/* Make images easier to work with */
-	img, picture {
+	img,
+	picture {
 		max-width: 100%;
 		display: block;
 	}
 
 	/* Inherit fonts for inputs and buttons */
-	input, button, textarea, select {
+	input,
+	button,
+	textarea,
+	select {
 		font-family: inherit;
 		font-size: inherit;
 	}
@@ -72,7 +97,9 @@
 
 	/* Global motion reduction — animations and transitions off for users who prefer it */
 	@media (prefers-reduced-motion: reduce) {
-		*, *::before, *::after {
+		*,
+		*::before,
+		*::after {
 			animation-duration: 0.01ms !important;
 			animation-iteration-count: 1 !important;
 			transition-duration: 0.01ms !important;

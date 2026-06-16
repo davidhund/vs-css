@@ -20,6 +20,6 @@
 	--vs-space-lg: 24px;
 	--vs-space-xl: 32px;
 	--vs-space-2xl: 48px;
-	--vs-typography-body: 'Inter', 'Segoe UI', 'Helvetica Neue', system-ui, -apple-system, sans-serif;
-	--vs-typography-mono: 'Fira Code', 'Monaco', 'Courier New', monospace;
+	--vs-typography-body: "Inter", "Segoe UI", "Helvetica Neue", system-ui, -apple-system, sans-serif;
+	--vs-typography-mono: "Fira Code", "Monaco", "Courier New", monospace;
 }

@@ -7,7 +7,12 @@
 		background-color: var(--vs-color-bg-default);
 	}
 
-	h1, h2, h3, h4, h5, h6 {
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
 		font-weight: var(--vs-font-weight-bold);
 		line-height: var(--vs-font-line-height-tight);
 	}
@@ -28,11 +33,13 @@
 		font-size: var(--vs-font-size-xl);
 	}
 
-	h5, h6 {
+	h5,
+	h6 {
 		font-size: var(--vs-font-size-lg);
 	}
 
-	code, pre {
+	code,
+	pre {
 		font-family: var(--vs-typography-mono);
 	}
 

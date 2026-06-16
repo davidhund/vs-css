@@ -37,9 +37,9 @@
 	},
 	"scripts": {
 		"tokens": "node build-tokens.mjs",
-		"build": "node build.mjs",
+		"build": "npm run format && npm run lint && node build.mjs",
 		"dev": "node build.mjs --watch",
-		"lint": "biome lint $npm_package_config_cssDir && stylelint '$npm_package_config_cssDir/**/*.css'",
+		"lint": "biome lint $npm_package_config_cssDir && stylelint \"$npm_package_config_cssDir/**/*.css\"",
 		"format": "biome format --write $npm_package_config_cssDir *.mjs *.json .stylelintrc.json"
 	},
 	"devDependencies": {

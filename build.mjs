@@ -25,7 +25,9 @@ function resolveImports(file, processed = new Set()) {
 
 	// Replace @import with file contents
 	content = content.replace(/@import\s+['"](.+?)['"]\s+layer\((\w+)\);?/g, (match, importPath) => {
-		const resolvedPath = importPath.startsWith("./") ? `${cssDir}/${importPath.slice(2)}` : importPath;
+		const resolvedPath = importPath.startsWith("./")
+			? `${cssDir}/${importPath.slice(2)}`
+			: importPath;
 		try {
 			return resolveImports(resolvedPath, processed);
 		} catch {
@@ -67,7 +69,7 @@ async function build() {
 		writeFileSync("dist/tokens/semantic.tokens.json", semanticTokens);
 
 		console.log(
-			`✓ CSS built${isMinify ? " (minified)" : " (dev)"} → dist/css/main.css${result.map ? " + source map" : ""}`
+			`✓ CSS built${isMinify ? " (minified)" : " (dev)"} → dist/css/main.css${result.map ? " + source map" : ""}`,
 		);
 	} catch (err) {
 		console.error("✗ Build failed:", err.message);

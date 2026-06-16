@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 
-import { readFileSync, writeFileSync, cpSync, existsSync } from "fs";
-import { resolve, dirname } from "path";
-import { fileURLToPath } from "url";
-import readline from "readline";
+import { readFileSync, writeFileSync, cpSync, existsSync } from "node:fs";
+import { resolve, dirname } from "node:path";
+import { fileURLToPath } from "node:url";
+import readline from "node:readline";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -45,7 +45,7 @@ async function setup() {
 
 	if (existingFiles.length > 0) {
 		console.error(
-			`\n❌ The following files/folders already exist:\n${existingFiles.map((f) => `  - ${f}`).join("\n")}\n`
+			`\n❌ The following files/folders already exist:\n${existingFiles.map((f) => `  - ${f}`).join("\n")}\n`,
 		);
 		console.error("Remove them or choose a different CSS folder location.\n");
 		rl.close();
@@ -110,8 +110,8 @@ async function setup() {
 		"css:tokens": "node build-tokens.mjs",
 		"css:build": "node build.mjs",
 		"css:dev": "node build.mjs --watch",
-		"css:lint": `biome lint $npm_package_config_cssDir && stylelint '$npm_package_config_cssDir/**/*.css'`,
-		"css:format": `biome format --write $npm_package_config_cssDir *.mjs *.json .stylelintrc.json`,
+		"css:lint": `biome lint $npm_package_config_cssDir && stylelint "$npm_package_config_cssDir/**/*.css"`,
+		"css:format": "biome format --write $npm_package_config_cssDir *.mjs *.json .stylelintrc.json",
 	};
 
 	for (const [key, value] of Object.entries(scriptUpdates)) {
@@ -120,7 +120,7 @@ async function setup() {
 	}
 
 	try {
-		writeFileSync(packageJsonPath, JSON.stringify(packageJson, null, "\t") + "\n");
+		writeFileSync(packageJsonPath, `${JSON.stringify(packageJson, null, "\t")}\n`);
 	} catch (err) {
 		console.error(`  ✗ Failed to update package.json: ${err.message}`);
 		rl.close();

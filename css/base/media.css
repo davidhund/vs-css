@@ -1,13 +1,18 @@
 @layer base {
 	/* Ensure media elements scale responsively */
-	img, picture, svg, video, canvas {
+	img,
+	picture,
+	svg,
+	video,
+	canvas {
 		max-width: 100%;
 		height: auto;
 		display: block;
 	}
 
 	/* Aspect ratio containers for embedded media */
-	iframe, video {
+	iframe,
+	video {
 		border-radius: var(--vs-radius-md);
 	}
 }

@@ -37,7 +37,7 @@
 	--vs-color-flexoki-base-600: #6f6e69;
 	--vs-color-flexoki-base-800: #403e3c;
 	--vs-color-flexoki-base-900: #282726;
-	--vs-font-family-sans: 'Inter', 'Segoe UI', 'Helvetica Neue', system-ui, -apple-system, sans-serif;
-	--vs-font-family-mono: 'Fira Code', 'Monaco', 'Courier New', monospace;
-	--vs-font-family-serif: 'Crimson Text', 'Georgia', serif;
+	--vs-font-family-sans: "Inter", "Segoe UI", "Helvetica Neue", system-ui, -apple-system, sans-serif;
+	--vs-font-family-mono: "Fira Code", "Monaco", "Courier New", monospace;
+	--vs-font-family-serif: "Crimson Text", "Georgia", serif;
 }

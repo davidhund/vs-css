@@ -1,5 +1,8 @@
 @layer base {
-	input, button, textarea, select {
+	input,
+	button,
+	textarea,
+	select {
 		border: var(--vs-border-1) solid var(--vs-color-border-default);
 		border-radius: var(--vs-radius-md);
 		padding: var(--vs-space-2) var(--vs-space-3);
