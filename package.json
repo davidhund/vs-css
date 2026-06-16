@@ -18,7 +18,15 @@
 		"./tokens/semantic": "./dist/tokens/semantic.tokens.json"
 	},
 	"files": [
-		"dist/"
+		"dist/",
+		"css/",
+		"build.mjs",
+		"build-tokens.mjs",
+		"biome.json",
+		"styledictionary.config.js",
+		".stylelintrc.json",
+		"README.md",
+		"ARCHITECTURE.md"
 	],
 	"scripts": {
 		"tokens": "node build-tokens.mjs",
